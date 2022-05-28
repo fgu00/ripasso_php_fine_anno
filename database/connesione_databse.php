@@ -10,18 +10,18 @@ user name <input type='text' name='user'></br>
 password <input type='text' name='pass'></br>
 nome database <input type='text' name='nomeDB'></br>
   <input type='submit'>
-</form>"
+</form>";
 
 //con if per il  post con al inizio il ! si traduce con il contrario 
     //passo alla funzione i suoi valori
-if(empty($_POST['nome'])){
+if(empty($_POST)){
 $conn=connDB($_POST['nome'],$_POST['user'],$_POST['pass'],$_POST['nomeBD']);
 //verifica la connesione con il database
 if($conn->connect_error){
     echo 'Connection error: ' . $conn->connect_error;
 } else {
-    $querry="SELECT * FROM 'persona'";
-    $conn->query($querry);
+    $querry="SELECT * FROM 'prima_prova'";
+    $conn->querry($querry);
     echo $conn;
 }
 }
